@@ -1,0 +1,7 @@
+{
+	"ClientId" : "guid-of-your-app-registration or empty",
+	"TenantName": "your-tenant.onmicrosoft.com",
+	"CertThumb": "your-pfx-thumbprint or empty",
+	"PfxPath": "C:/Temp/your-pfx.pfx or empty",
+	"PfxPwd": "your-pfx-password or empty"
+}

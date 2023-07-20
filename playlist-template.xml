@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.13.1.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c">
+    <pnp:Parameters>
+      <pnp:Parameter Key="PlaylistUrl" Required="true" />
+    </pnp:Parameters>
+  </pnp:Preferences>
+  <pnp:Templates ID="CONTAINER-TEMPLATE-ABCD38B3F02F48978FB6B9B8401B33A7">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-ABCD38B3F02F48978FB6B9B8401B33A7" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="{parameter:PlaylistUrl}" Description=" " DocumentTemplate="" OnQuickLaunch="true" TemplateType="100" Url="Lists/{parameter:PlaylistUrl}" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="50" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-de22-43b2-a848-c05709900100" EnableFolderCreation="false" DefaultDisplayFormUrl="{site}/Lists/{parameter:PlaylistUrl}/DispForm.aspx" DefaultEditFormUrl="{site}/Lists/{parameter:PlaylistUrl}/EditForm.aspx" DefaultNewFormUrl="{site}/Lists/{parameter:PlaylistUrl}/NewForm.aspx" ImageUrl="/_layouts/15/images/itgen.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views>
+            <View Name="{1731AD98-8A14-424D-BB84-9D915A603E04}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="Playlist" Url="{site}/Lists/{parameter:PlaylistUrl}/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/generic.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Created" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Thumbnail" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Owner" />
+                <FieldRef Name="Duration" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+              <ViewType2>PLAYLISTPLAYBACK</ViewType2>
+            </View>
+            <View Name="{E25C9434-573B-4756-82D9-A2E9EF6CD98B}" MobileView="TRUE" Type="HTML" DisplayName="All Items" Url="{site}/Lists/{parameter:PlaylistUrl}/All Items.aspx" Level="1" ContentTypeID="0x">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="Created" Ascending="FALSE" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="Thumbnail" />
+                <FieldRef Name="LinkTitle" />
+                <FieldRef Name="Owner" />
+                <FieldRef Name="Duration" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field ID="{abbe9246-93ad-46e0-92c8-f256ac745319}" DisplayName="Thumbnail" Description="The thumbnail of the video" Name="Thumbnail" Title="Thumbnail" Type="Note" ReadOnlyEnforced="TRUE" StaticName="Thumbnail" CustomFormatter="{&#xD;&#xA;    &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/v2/column-formatting.schema.json&quot;,&#xD;&#xA;    &quot;elmType&quot;: &quot;div&quot;,&#xD;&#xA;    &quot;style&quot;: {&#xD;&#xA;      &quot;display&quot;: &quot;flex&quot;,&#xD;&#xA;      &quot;flex-direction&quot;: &quot;column&quot;,&#xD;&#xA;      &quot;height&quot;: &quot;100%&quot;,&#xD;&#xA;      &quot;justify-content&quot;: &quot;center&quot;,&#xD;&#xA;      &quot;width&quot;: &quot;100%&quot;&#xD;&#xA;    },&#xD;&#xA;    &quot;children&quot;: [{&#xD;&#xA;      &quot;elmType&quot;: &quot;div&quot;,&#xD;&#xA;      &quot;style&quot;: {&#xD;&#xA;        &quot;width&quot;: &quot;100%&quot;,&#xD;&#xA;        &quot;height&quot;: &quot;80%&quot;,&#xD;&#xA;        &quot;display&quot;: &quot;flex&quot;,&#xD;&#xA;        &quot;flex-direction&quot;: &quot;row&quot;,&#xD;&#xA;        &quot;justify-content&quot;: &quot;center&quot;&#xD;&#xA;      },&#xD;&#xA;      &quot;children&quot;: [&#xD;&#xA;        {&#xD;&#xA;          &quot;elmType&quot;: &quot;img&quot;,&#xD;&#xA;          &quot;style&quot;: {&#xD;&#xA;            &quot;height&quot;: &quot;100%&quot;,&#xD;&#xA;            &quot;width&quot;: &quot;100%&quot;,&#xD;&#xA;            &quot;border-radius&quot;: &quot;2px&quot;,&#xD;&#xA;            &quot;margin&quot;: &quot;4px&quot;&#xD;&#xA;          },&#xD;&#xA;          &quot;attributes&quot;: {&#xD;&#xA;            &quot;src&quot;: &quot;[$Thumbnail]&quot;&#xD;&#xA;          }&#xD;&#xA;        }&#xD;&#xA;      ]&#xD;&#xA;    }]&#xD;&#xA;}" ColName="ntext2" RowOrdinal="0" SourceID="{{listid:{parameter:PlaylistUrl}}}">
+              <FieldRefs>
+                <FieldRef Name="VideoIdentifiers" />
+              </FieldRefs>
+            </Field>
+            <Field ID="{1df873df-63c7-49fa-9b42-b474355686bf}" DisplayName="Owner" Description="The owner of the video" Name="Owner" Title="Owner" Type="User" StaticName="Owner" ReadOnlyEnforced="TRUE" UserDisplayOptions="NamePhoto" CustomFormatter="{&#xD;&#xA; &quot;$schema&quot;: &quot;https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json&quot;,&#xD;&#xA;    &quot;elmType&quot;: &quot;div&quot;,&#xD;&#xA;    &quot;style&quot;: {&#xD;&#xA;        &quot;flex-direction&quot;: &quot;column&quot;,&#xD;&#xA;  &quot;align-items&quot;: &quot;flex-start&quot;,&#xD;&#xA;  &quot;margin-top&quot;: &quot;6px&quot;,&#xD;&#xA;  &quot;padding-right&quot;: &quot;8px&quot;,&#xD;&#xA;  &quot;width&quot;: &quot;100%&quot;,&#xD;&#xA;  &quot;overflow&quot;: &quot;hidden&quot;&#xD;&#xA;    },&#xD;&#xA; &quot;children&quot;: [{&#xD;&#xA;  &quot;forEach&quot;: &quot;personIterator in @currentField&quot;,&#xD;&#xA;  &quot;elmType&quot;: &quot;div&quot;,&#xD;&#xA;  &quot;attributes&quot;: {&#xD;&#xA;   &quot;class&quot;: &quot;ms-bgColor-neutralLight ms-fontColor-neutralSecondary&quot;&#xD;&#xA;  },&#xD;&#xA;  &quot;style&quot;: {&#xD;&#xA;   &quot;display&quot;: &quot;inline-flex&quot;,&#xD;&#xA;   &quot;align-items&quot;: &quot;center&quot;,&#xD;&#xA;            &quot;height&quot;: &quot;28px&quot;,&#xD;&#xA;            &quot;overflow&quot;: &quot;hidden&quot;,&#xD;&#xA;   &quot;border-radius&quot;: &quot;12px&quot;,&#xD;&#xA;   &quot;padding-right&quot;: &quot;8px&quot;,&#xD;&#xA;   &quot;margin&quot;: &quot;2px&quot;&#xD;&#xA;  },&#xD;&#xA;  &quot;children&quot;: [&#xD;&#xA;            {&#xD;&#xA;    &quot;elmType&quot;: &quot;img&quot;,&#xD;&#xA;    &quot;attributes&quot;: {&#xD;&#xA;     &quot;src&quot;: &quot;='/_layouts/15/userphoto.aspx?size=S&amp;accountname=' + [$personIterator.email]&quot;,&#xD;&#xA;     &quot;title&quot;: &quot;[$personIterator.title]&quot;&#xD;&#xA;    },&#xD;&#xA;    &quot;style&quot;: {&#xD;&#xA;     &quot;width&quot;: &quot;28px&quot;,&#xD;&#xA;     &quot;height&quot;: &quot;28px&quot;,&#xD;&#xA;     &quot;display&quot;: &quot;block&quot;,&#xD;&#xA;     &quot;border-radius&quot;: &quot;50%&quot;&#xD;&#xA;    }&#xD;&#xA;   },&#xD;&#xA;   {&#xD;&#xA;                &quot;elmType&quot;: &quot;div&quot;,&#xD;&#xA;                &quot;txtContent&quot;: &quot;[$personIterator.title]&quot;,&#xD;&#xA;                &quot;attributes&quot;: {&#xD;&#xA;                    &quot;title&quot;: &quot;[$personIterator.title]&quot;,&#xD;&#xA;                    &quot;class&quot;: &quot;nameplate-title&quot;&#xD;&#xA;                },&#xD;&#xA;                &quot;style&quot;: {&#xD;&#xA;                    &quot;padding-left&quot;: &quot;5px&quot;,&#xD;&#xA;                    &quot;white-space&quot;: &quot;nowrap&quot;,&#xD;&#xA;                    &quot;font-size&quot;: &quot;12px&quot;&#xD;&#xA;                }&#xD;&#xA;            }&#xD;&#xA;  ],&#xD;&#xA;  &quot;defaultHoverField&quot;: &quot;[$personIterator]&quot;&#xD;&#xA; }]&#xD;&#xA;}" ColName="int1" RowOrdinal="0" SourceID="{{listid:{parameter:PlaylistUrl}}}" />
+            <Field ID="{790d4860-6fe4-4674-a608-bf7fbc86be3b}" AllowGridEditing="TRUE" AutoHyperLink="TRUE" ClientSideComponentId="00000000-0000-0000-0000-000000000000" DisplayName="Duration" FieldType="Text" Format="Text" Name="Duration" RealFieldName="Duration" StaticName="Duration" ShowInFiltersPane="Auto" Type="Text" ariaLabel="Duration" role="Text" ColName="nvarchar7" RowOrdinal="0" SourceID="{00B44789-EB63-42F1-8A39-4982936F317B}">
+              <Validation Message="Invalid format. Duration format should be in hh:mm:ss">=IF(ISBLANK([Duration]),TRUE, OR(
+          AND(
+              LEN([Duration])=5,
+              MID([Duration],3,1)=":",
+              ISNUMBER(MID([Duration],1,2)+0),
+              ISNUMBER(MID([Duration],4,2)+0),
+              CODE(MID([Duration],1,1))&lt;54,
+              CODE(MID([Duration],4,1))&lt;54
+          ),
+          AND(
+              LEN([Duration])=8,
+              MID([Duration],3,1)=":",
+              MID([Duration],6,1)=":",
+              ISNUMBER(MID([Duration],1,2)+0),
+              ISNUMBER(MID([Duration],4,2)+0),
+              ISNUMBER(MID([Duration],7,2)+0),
+              CODE(MID([Duration],4,1))&lt;54,
+              CODE(MID([Duration],7,1))&lt;54
+          )
+      )
+      )
+      </Validation>
+            </Field>
+            <Field ID="{3189069f-ce6f-43cb-9a76-b61111da91e4}" DisplayName="VideoIdentifiers" Description="This field contains video identifiers deemed important for the rendering the videos in the playlist" Name="VideoIdentifiers" Title="VideoIdentifiers" Type="Note" CanToggleHidden="FALSE" Hidden="TRUE" StaticName="VideoIdentifiers" ColName="ntext3" RowOrdinal="0" SourceID="{00B44789-EB63-42F1-8A39-4982936F317B}" Version="1" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" Required="true" DisplayName="Title" />
+            <pnp:FieldRef ID="76d13cd2-1bae-45a5-8b74-545b87b65037" Name="_ColorTag" DisplayName="Color tag" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
