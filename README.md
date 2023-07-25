@@ -91,7 +91,7 @@ The script has five steps:
 5. Write the final version of the template (default value: `playlist-template.xml`)
 
 ~~~powershell
-.\GetPlaylistTemplate.ps1 -Env LAB -TemplateSiteUrl "https://your-tenant.sharepoint.com/sites/your-site" -TemplatePlaylistName "My Playlist
+.\GetPlaylistTemplate.ps1 -Env LAB -TemplateSiteUrl "https://your-tenant.sharepoint.com/sites/your-site" -TemplatePlaylistName "My Playlist"
 ~~~
 
 You can add `-Verbose` to display more information in the terminal. Also, a log file is generated for each execution all in the `Logs` folder.
@@ -137,7 +137,7 @@ You must specify:
 You can add `-Verbose` to display more information in the terminal.
 
 ~~~powershell
-.\SetPlaylist.ps1 -Env LAB -Verbose
+.\SetPlaylist.ps1 -Env LAB -SourceSiteUrl "https://your-tenant.sharepoint.com/sites/your-site" -SourceLibrary "Documents" -TargetSiteUrl "https://your-tenant.sharepoint.com/sites/your-training-site" -TargetPlaylistName "Training" -Verbose
 ~~~
 
 Only `.mp4` files stored in the document library will be added to the playlist.
